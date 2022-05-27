@@ -24,7 +24,7 @@ Staking, complaints, refunds, and slashing mechanics are not included in this re
 
 ## Smart contract
 
-The solidity contract is located in artifacts > contracts
+The solidity contract is located in [artifacts > ontracts](https://github.com/nonymousoctopus/chainlink-hackathon-nftickets/tree/main/artifacts/contracts)
 
 ## Installation
 
