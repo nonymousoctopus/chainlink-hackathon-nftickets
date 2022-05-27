@@ -14,13 +14,17 @@ Staking, complaints, refunds, and slashing mechanics are not included in this re
 
 ## This project is using:
 
-- [ethereum-react-native-boilerplate]([https://github.com/cawfree/create-react-native-dapp](https://github.com/ethereum-boilerplate/ethereum-react-native-boilerplate)) at it's core.
+- [ethereum-react-native-boilerplate](https://github.com/ethereum-boilerplate/ethereum-react-native-boilerplate) for most of the core functions.
 - [WalletConnect v1 react-native integration](https://docs.walletconnect.com/1.0/quick-start/dapps/react-native) for authenthication (we use a slightly modiefied version, located in `./src/WalletConnect` to allow to modify the `enable` function of Moralis).
 - [react-moralis](https://github.com/MoralisWeb3/react-moralis) for react hooks
 - [react-native-qrcode-generator](https://github.com/rishichawda/react-native-qrcode-generator) for QR code generation
 - [react-native-image-picker](https://github.com/react-native-image-picker/react-native-image-picker) for content upload
 - [react-native-qrcode-scanner](https://github.com/moaazsidat/react-native-qrcode-scanner) for QR code scanning and verification of ticket ownership
 - Formik and yup for form iupload and validation
+
+## Smart contract
+
+The solidity contract is located in artifacts > contracts
 
 ## Installation
 
