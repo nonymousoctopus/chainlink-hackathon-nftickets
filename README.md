@@ -26,6 +26,10 @@ Staking, complaints, refunds, and slashing mechanics are not included in this re
 
 The solidity contract is located in [artifacts > contracts](https://github.com/nonymousoctopus/chainlink-hackathon-nftickets/tree/main/artifacts/contracts)
 
+Chainlink Pricefeed is integrated into the marketplace contract (lines 90-193 for relevant sections), and calls the AVAX/USD pricefeed on the Avalanche testnet.
+
+IPFS is accessed via a Moralis gateway.
+
 ## Installation
 
 Install all dependencies:
@@ -59,5 +63,3 @@ IMPORTANT:
   - Command 
     `react-native run-android` for react-native-cli package users or 
     `npx react-native run-android` if you're using the latest recommended version of node.js
-
-# Interface
