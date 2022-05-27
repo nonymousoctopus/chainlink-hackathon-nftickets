@@ -1,42 +1,21 @@
-# ethereum-react-native-boilerplate
-
-> React Native components and hooks for fast building dApps without running own backend
-
-[![Discord](https://img.shields.io/badge/discord-join%20chat-blue.svg?style=for-the-badge&logo=discord)](https://discord.com/invite/wV7nkDYGyZ)
-[![Discourse topics](https://img.shields.io/discourse/topics?label=Forum%20Support&logo=Moralis&server=https%3A%2F%2Fforum.moralis.io&style=for-the-badge)](https://forum.moralis.io/t/ethereum-react-native-boilerplate-questions/4511)
-[![GitHub last commit](https://img.shields.io/github/last-commit/ethereum-boilerplate/ethereum-react-native-boilerplate?color=informational&style=for-the-badge)](https://github.com/ethereum-boilerplate/ethereum-react-native-boilerplate/commits/main)
-
-![GitHub Repo stars](https://img.shields.io/github/stars/ethereum-boilerplate/ethereum-react-native-boilerplate?style=social)
-[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FMoralisWeb3)](https://twitter.com/MoralisWeb3)
+# NFTickets
 
 This project is using:
 
-- [create-react-native-dapp](https://github.com/cawfree/create-react-native-dapp) to bootstrap the project.
+- [ethereum-react-native-boilerplate]([https://github.com/cawfree/create-react-native-dapp](https://github.com/ethereum-boilerplate/ethereum-react-native-boilerplate)) at it's core.
 - [WalletConnect v1 react-native integration](https://docs.walletconnect.com/1.0/quick-start/dapps/react-native) for authenthication (we use a slightly modiefied version, located in `./src/WalletConnect` to allow to modify the `enable` function of Moralis).
 - [react-moralis](https://github.com/MoralisWeb3/react-moralis) for react hooks
+- [react-native-qrcode-generator](https://github.com/rishichawda/react-native-qrcode-generator) for QR code generation
+- [react-native-image-picker](https://github.com/react-native-image-picker/react-native-image-picker) for content upload
+- [react-native-qrcode-scanner](https://github.com/moaazsidat/react-native-qrcode-scanner) for QR code scanning and verification of ticket ownership
+- Formik and yup for form iupload and validation
 
-There are many components in this boilerplate that do not require an active web3 provider, they use Moralis Web3 API. Moralis supports the most popular blockchains and their test networks. You can find a list of all available networks in [Moralis Supported Chains](https://docs.moralis.io/moralis-server/web3-sdk/intro#supported-chains)
+# Installation
 
-Please check the [official documentation of Moralis](https://docs.moralis.io/#user) for all the functionalities of Moralis.
-
-Check the corresponding docs for additional information and help.
-
-![Iphone demo 2 (2)](https://user-images.githubusercontent.com/9363303/152293950-b0ddd2e9-2c6e-43d2-81ef-60dad43f21a5.gif)
-
-# ⭐️ `Star us`
-
-If this boilerplate helps you build Ethereum mobile dapps faster - please star this project, every star makes us very happy!
-
-# 🤝 `Need help?`
-
-If you need help with setting up the boilerplate or have other questions - don't hesitate to write in our community forum and we will check asap. [Forum link](https://forum.moralis.io/t/ethereum-react-native-boilerplate-questions/4511). The best thing about this boilerplate is the super active community ready to help at any time! We help each other.
-
-# 🚀 Quick Start
-
-💿 Install all dependencies:
+Install all dependencies:
 
 ```sh
-cd ethereum-react-native-boilerplate
+cd chainlink-hackathon-nftickets
 yarn install
 
 cd ios
@@ -45,7 +24,7 @@ pod install
 cd ..
 ```
 
-🚴‍♂️ Run your App:
+Run your App:
 
 IMPORTANT:
 
@@ -65,11 +44,7 @@ IMPORTANT:
     `react-native run-android` for react-native-cli package users or 
     `npx react-native run-android` if you're using the latest recommended version of node.js
 
-What's New:
-
-- React Native Debugger. Debugging your dapp in a browser is straightforward with React Native Debugger. Simply open the simulator on iOS and press `cmd + d`; for the Android emulator, `press cmd + m` and pick Debug from the React Native Debug menu. If you're using a physical device, simply shake it until the debugger menu appears.
-
-# 🧭 Table of contents
+# Interface
 
 - [ethereum-react-native-boilerplate](#ethereum-react-native-boilerplate)
 - [⭐️ `Star us`](#️-star-us)
