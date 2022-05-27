@@ -46,6 +46,11 @@ cd ..
 
 Run your App:
 
+```sh
+yarn android
+
+```
+
 IMPORTANT:
 
 - To run the app and be able to actually login do the following:
