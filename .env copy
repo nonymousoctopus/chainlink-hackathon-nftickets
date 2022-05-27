@@ -1,9 +1,0 @@
-# Mandatory info for starting the app
-REACT_APP_MORALIS_APPLICATION_ID='cCXqLKtGOpOY6O7tONmAIQJsCpfii919IRn4j1DR'
-REACT_APP_MORALIS_SERVER_URL='https://qjadwozsbu4m.usemoralis.com:2053/server'
-
-# Optional info for connecting your localChain and Moralis Database
-# moralisApiKey = xxxxx
-# moralisApiSecret = xxxxxxx
-# moralisSubdomain = xxxxxxx.usemoralis.com
-# abiPath = "F:\ethereum-boilerplate\Truffle\build\contracts\Contract.json"
