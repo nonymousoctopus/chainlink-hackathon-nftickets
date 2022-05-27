@@ -10,13 +10,15 @@ import { LogBox } from "react-native";
 
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import CryptoAuth from "./Components/CryptoAuth";
-import RecentTransactions from "./Components/RecentTransactions/RecentTransactions";
+import NFTMarketplace from "./Components/RecentTransactions/NFTMarketplace";
 import Assets from "./Components/Assets/Assets";
 //import Transfer from "./Components/Transfer/Transfer";
 import Scanner from "./Components/Scanner/Scanner";
 import Profile from "./Components/Profile/Profile";
 import Header from "./Components/Header";
 import NFTAssets from "./Components/NFT/NFTAssets";
+import Test from "./Components/Test";
+import MyAssets from "./Components/Mint/MyAssets";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
@@ -25,6 +27,9 @@ import {
   faUser,
   faPaperPlane,
   faRocket,
+  faTicketAlt,
+  faStore,
+  faCalendarDay,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Moralis from "moralis/types";
@@ -40,55 +45,34 @@ function Home(): JSX.Element {
       // inactiveColor="#3e2465"
       barStyle={{ backgroundColor: "white" }}>
       <Tab.Screen
-        name="Assets"
+        name="Tickets"
         options={{
-          tabBarLabel: "Assets",
+          tabBarLabel: "Tickets",
           tabBarIcon: ({ color, focused }) => {
-            return <FontAwesomeIcon icon={faCoins} color={color} size={20} />;
+            return <FontAwesomeIcon icon={faTicketAlt} color={color} size={20} />;
           },
         }}
-        component={Assets}
+        component={MyAssets}
       />
       <Tab.Screen
-        name="Transactions"
+        name="Marketplace"
         options={{
-          tabBarLabel: "Transactions",
+          tabBarLabel: "Marketplace",
           tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faCreditCard} color={color} size={20} />
+            <FontAwesomeIcon icon={faStore} color={color} size={20} />
           ),
         }}
-        component={RecentTransactions}
+        component={NFTMarketplace}
       />
       <Tab.Screen
-        name="NFTAssets"
+        name="Events"
         options={{
-          tabBarLabel: "NFTAssets",
+          tabBarLabel: "Events",
           tabBarIcon: ({ color, focused }) => {
-            return <FontAwesomeIcon icon={faRocket} color={color} size={20} />;
+            return <FontAwesomeIcon icon={faCalendarDay} color={color} size={20} />;
           },
         }}
         component={NFTAssets}
-      />
-      <Tab.Screen
-        name="Scanner"
-        options={{
-          tabBarLabel: "Scanner",
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faPaperPlane} color={color} size={20} />
-          ),
-        }}
-        component={Scanner}
-      />
-
-      <Tab.Screen
-        name="Profile"
-        options={{
-          tabBarLabel: "Profile",
-          tabBarIcon: ({ color }) => (
-            <FontAwesomeIcon icon={faUser} color={color} size={20} />
-          ),
-        }}
-        component={Profile}
       />
     </Tab.Navigator>
   );
@@ -103,14 +87,12 @@ function getHeaderTitle(route) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? "Feed";
 
   switch (routeName) {
-    case "Assets":
-      return "Assets";
-    case "Scanner":
-      return "Scanner";
-    case "Transactions":
-      return "Transactions";
-    case "Profile":
-      return "Profile";
+    case "Tickets":
+      return "Tickets";
+    case "Marketplace":
+      return "Marketplace";
+    case "Events":
+      return "Events";
   }
 }
 

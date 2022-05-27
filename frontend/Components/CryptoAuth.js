@@ -13,6 +13,7 @@ import {
   Animated,
   Dimensions,
   ImageBackground,
+  SafeAreaView,
 } from "react-native";
 import {
   Button,
@@ -29,10 +30,12 @@ import {
   useMoralisWeb3ApiCall,
 } from "react-moralis";
 import { useWalletConnect } from "../WalletConnect";
-import LottieView from "lottie-react-native";
+//import LottieView from "lottie-react-native";
+
+import appLogo from "../../assets/image/NFTickets_logo.png";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Animation from "../splashLottie.json";
+//import Animation from "../splashLottie.json";
 
 // import Loader from './Components/Loader';
 const windowWidth = Dimensions.get("window").width;
@@ -82,7 +85,7 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <Provider>
-      <View style={styles.mainBody}>
+      <SafeAreaView style={styles.mainBody}>
         <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{
@@ -90,25 +93,12 @@ const LoginScreen = ({ navigation }) => {
             justifyContent: "center",
             alignContent: "center",
           }}>
-          <Image
-            style={{ flex: 1, maxWidth: '100%', alignSelf: 'center' }}
-            source={require("../eth.png")}
+          <Image style={styles.headerIMG} source={require("../../assets/image/Event.jpeg")}
+          />
+          <Image style={styles.logoIMG} source={require("../../assets/image/NFTickets_logo.png")}
           />
           <View style={{ flex: 1 }}>
             <KeyboardAvoidingView enabled>
-              <View style={{ alignItems: "center" }}>
-                <LottieView source={Animation} loop autoPlay />
-                <Image
-                  source={require("../moralis-logo.png")}
-                  style={{
-                    width: "50%",
-                    height: 100,
-                    resizeMode: "contain",
-                    margin: 30,
-                  }}
-                />
-              </View>
-
               <View>
                 {authError && (
                   <Portal>
@@ -131,28 +121,101 @@ const LoginScreen = ({ navigation }) => {
               </View>
 
               <TouchableOpacity
-                style={styles.buttonStyle}
+                style={styles.buttonLGE}
                 activeOpacity={0.5}
                 onPress={handleCryptoLogin}>
-                <Text style={styles.buttonTextStyle}>Crypto Wallet Login</Text>
+                <Text style={styles.buttonLGETextStyle}>Connect Wallet</Text>
               </TouchableOpacity>
               <Text
-                style={styles.registerTextStyle}
+                style={styles.getWalletTextStyle}
                 onPress={() =>
                   Linking.openURL("https://ethereum.org/en/wallets/")
                 }>
-                What are wallets?
+                Get a wallet
               </Text>
             </KeyboardAvoidingView>
           </View>
         </ScrollView>
-      </View>
+      </SafeAreaView>
     </Provider>
   );
 };
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  headerIMG: {
+    width: "100%",
+    height: "25%",
+    resizeMode: "cover",
+    marginBottom: "25%",
+  },
+  logoIMG: {
+    width: "80%",
+    alignSelf: "center",
+    resizeMode: "contain",
+    marginBottom: "25%",
+  },
+  buttonLGE: {
+    backgroundColor: "#2B2D42",
+    borderWidth: 0,
+    color: "#FFFFFF",
+    borderColor: "#2B2D42",
+    height: 40,
+    alignItems: "center",
+    borderRadius: 8,
+    marginLeft: 35,
+    marginRight: 35,
+    marginTop: 20,
+    marginBottom: 25,
+  },
+  buttonLGETextStyle: {
+    color: "#FFFFFF",
+    paddingVertical: 6,
+    fontSize: 20,
+    fontFamily:"sans-serif",
+    fontWeight: "300",
+  },
+  mainBody: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "white",
+    alignContent: "center",
+  },
+  SectionStyle: {
+    flexDirection: "row",
+    height: 40,
+    marginTop: 20,
+    marginLeft: 35,
+    marginRight: 35,
+    margin: 10,
+  },
+  inputStyle: {
+    flex: 1,
+    color: "white",
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderWidth: 1,
+    borderRadius: 30,
+    borderColor: "#dadae8",
+  },
+  getWalletTextStyle: {
+    color: "#8D99AE",
+    fontFamily: "sans-serif",
+    textAlign: "center",
+    fontWeight: "normal",
+    fontSize: 14,
+    alignSelf: "center",
+    padding: 10,
+  },
+  errorTextStyle: {
+    color: "#EF233C",
+    textAlign: "center",
+    fontSize: 14,
+  },
+
+
+
+
   mainBody: {
     flex: 1,
     justifyContent: "center",
