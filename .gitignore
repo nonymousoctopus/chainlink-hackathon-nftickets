@@ -60,4 +60,3 @@ buck-out/
 /ios/Pods/
 node_modules
 
-.env
